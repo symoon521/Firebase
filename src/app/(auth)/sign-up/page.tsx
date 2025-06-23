@@ -56,7 +56,7 @@ export default function SignUpPage() {
         </Button>
         <p className="mt-4 text-center text-sm text-muted-foreground">
           Already have an account?{' '}
-          <Link href="/auth/sign-in" className="font-semibold text-primary hover:underline">
+          <Link href="/sign-in" className="font-semibold text-primary hover:underline">
             Sign In
           </Link>
         </p>

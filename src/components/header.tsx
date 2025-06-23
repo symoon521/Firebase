@@ -36,10 +36,10 @@ export default function Header() {
           </nav>
           <div className="hidden md:flex items-center gap-2">
             <Button variant="ghost" asChild>
-              <Link href="/auth/sign-in">Sign In</Link>
+              <Link href="/sign-in">Sign In</Link>
             </Button>
             <Button asChild>
-              <Link href="/auth/sign-up">Sign Up</Link>
+              <Link href="/sign-up">Sign Up</Link>
             </Button>
           </div>
           <div className="md:hidden">
@@ -65,10 +65,10 @@ export default function Header() {
             ))}
             <div className="flex w-full flex-col gap-2 pt-4 border-t">
               <Button variant="ghost" asChild className="w-full">
-                <Link href="/auth/sign-in" onClick={() => setIsOpen(false)}>Sign In</Link>
+                <Link href="/sign-in" onClick={() => setIsOpen(false)}>Sign In</Link>
               </Button>
               <Button asChild className="w-full">
-                <Link href="/auth/sign-up" onClick={() => setIsOpen(false)}>Sign Up</Link>
+                <Link href="/sign-up" onClick={() => setIsOpen(false)}>Sign Up</Link>
               </Button>
             </div>
           </nav>

@@ -85,13 +85,13 @@ export const userCrops: UserCrop[] = [
     farmId: "farm-1",
     farmName: "Green Valley Organics",
     cropName: "Tomato",
-    startDate: new Date("2024-05-01"),
-    estimatedHarvestDate: new Date("2024-08-15"),
+    startDate: new Date(new Date().setDate(new Date().getDate() - 30)),
+    estimatedHarvestDate: new Date(new Date().setDate(new Date().getDate() + 45)),
     status: "growing",
     growthLog: [
-      { timestamp: new Date("2024-05-01T10:00:00Z"), event: "Seeds planted in nutrient-rich soil." },
-      { timestamp: new Date("2024-05-15T09:00:00Z"), event: "Watered with 2L of water." },
-      { timestamp: new Date("2024-06-01T11:30:00Z"), event: "Organic pest control applied." },
+      { timestamp: new Date(new Date().setDate(new Date().getDate() - 30)), event: "Seeds planted in nutrient-rich soil." },
+      { timestamp: new Date(new Date().setDate(new Date().getDate() - 15)), event: "Watered with 2L of water." },
+      { timestamp: new Date(new Date().setDate(new Date().getDate() - 1)), event: "Organic pest control applied." },
     ],
     tagId: "A-1-Tomato"
   },
@@ -101,15 +101,29 @@ export const userCrops: UserCrop[] = [
     farmId: "farm-4",
     farmName: "CyberCrops Initiative",
     cropName: "Lettuce",
-    startDate: new Date("2024-06-10"),
-    estimatedHarvestDate: new Date("2024-07-25"),
+    startDate: new Date(new Date().setDate(new Date().getDate() - 40)),
+    estimatedHarvestDate: new Date(new Date().setDate(new Date().getDate() + 5)),
     status: "ready_for_harvest",
     growthLog: [
-      { timestamp: new Date("2024-06-10T14:00:00Z"), event: "Hydroponic system activated." },
-      { timestamp: new Date("2024-06-20T14:00:00Z"), event: "Nutrient levels checked and adjusted." },
-      { timestamp: new Date("2024-07-05T14:00:00Z"), event: "LED light cycle optimized for growth." },
+      { timestamp: new Date(new Date().setDate(new Date().getDate() - 40)), event: "Hydroponic system activated." },
+      { timestamp: new Date(new Date().setDate(new Date().getDate() - 20)), event: "Nutrient levels checked and adjusted." },
+      { timestamp: new Date(new Date().setDate(new Date().getDate() - 5)), event: "LED light cycle optimized for growth." },
     ],
     tagId: "V-5-Lettuce"
+  },
+  {
+    id: "usercrop-3",
+    userId: "auth-user-1",
+    farmId: "farm-2",
+    farmName: "Sunrise Acres",
+    cropName: "Strawberry",
+    startDate: new Date(new Date().setDate(new Date().getDate() - 2)),
+    estimatedHarvestDate: new Date(new Date().setDate(new Date().getDate() + 68)),
+    status: "planting",
+    growthLog: [
+      { timestamp: new Date(new Date().setDate(new Date().getDate() - 2)), event: "Seeds planted." },
+    ],
+    tagId: "B-3-Strawberry"
   }
 ];
 

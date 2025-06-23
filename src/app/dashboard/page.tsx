@@ -9,6 +9,8 @@ import { CalendarDays, Sprout, Tag } from "lucide-react";
 export default function DashboardPage() {
   const getStatusBadgeVariant = (status: string) => {
     switch (status) {
+      case "planting":
+        return "secondary";
       case "growing":
         return "default";
       case "ready_for_harvest":
