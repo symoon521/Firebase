@@ -25,7 +25,7 @@ export default function FarmCard({ farm }: FarmCardProps) {
           {farm.isSmartFarm && (
             <Badge variant="destructive" className="absolute top-2 right-2 bg-accent text-accent-foreground">
               <Video className="w-4 h-4 mr-2"/>
-              Smart Farm
+              스마트 팜
             </Badge>
           )}
         </div>
@@ -44,14 +44,14 @@ export default function FarmCard({ farm }: FarmCardProps) {
             <Badge key={crop} variant="secondary">{crop}</Badge>
           ))}
           {farm.availableCrops.length > 4 && (
-            <Badge variant="secondary">+{farm.availableCrops.length - 4} more</Badge>
+            <Badge variant="secondary">+{farm.availableCrops.length - 4} 더보기</Badge>
           )}
         </div>
       </CardContent>
       <CardFooter className="p-6 pt-0">
         <Button asChild className="w-full">
           <Link href={`/farms/${farm.id}`}>
-            View Farm <ArrowRight className="ml-2 w-4 h-4" />
+            농장 보기 <ArrowRight className="ml-2 w-4 h-4" />
           </Link>
         </Button>
       </CardFooter>

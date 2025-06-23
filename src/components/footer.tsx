@@ -11,7 +11,7 @@ export default function Footer() {
             <Link href="/">
               <Logo />
             </Link>
-            <p className="text-sm text-muted-foreground mt-2">The future of farming, shared.</p>
+            <p className="text-sm text-muted-foreground mt-2">농업의 미래를 공유합니다.</p>
           </div>
           <div className="flex items-center space-x-4">
             <Link href="#" className="text-muted-foreground hover:text-primary"><Github className="h-5 w-5" /></Link>
@@ -20,7 +20,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-8 border-t pt-4 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} SmartShare Farms. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} SmartShare Farms. 모든 권리 보유.</p>
         </div>
       </div>
     </footer>

@@ -11,10 +11,10 @@ interface GrowthLogProps {
 }
 
 const newEvents = [
-  "Sunlight exposure optimal.",
-  "Soil moisture checked: 65%.",
-  "Leaf health analysis positive.",
-  "Automated pest scan complete."
+  "일조량 최적.",
+  "토양 수분 확인: 65%.",
+  "잎 건강 분석 결과 양호.",
+  "자동 해충 스캔 완료."
 ];
 
 export default function GrowthLog({ log }: GrowthLogProps) {
@@ -51,7 +51,7 @@ export default function GrowthLog({ log }: GrowthLogProps) {
               <div>
                 <p className="font-semibold text-sm">{entry.event}</p>
                 <p className="text-xs text-muted-foreground">
-                  {entry.timestamp.toLocaleString()}
+                  {entry.timestamp.toLocaleString('ko-KR')}
                 </p>
               </div>
             </div>

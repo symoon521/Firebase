@@ -40,7 +40,7 @@ export default function FarmDetailPage({ params }: { params: { id: string } }) {
                 {farm.isSmartFarm && (
                   <Badge variant="destructive" className="mt-2 md:mt-0 bg-accent text-accent-foreground py-2 px-4 rounded-full text-sm">
                     <Video className="w-4 h-4 mr-2"/>
-                    Smart Farm
+                    스마트 팜
                   </Badge>
                 )}
               </div>
@@ -52,14 +52,14 @@ export default function FarmDetailPage({ params }: { params: { id: string } }) {
                 <div className="flex items-center gap-3">
                   <AreaChart className="w-8 h-8 text-primary"/>
                   <div>
-                    <span className="font-semibold">Available Area:</span>
-                    <p className="text-muted-foreground">{farm.availableArea} sq. meters</p>
+                    <span className="font-semibold">사용 가능 면적:</span>
+                    <p className="text-muted-foreground">{farm.availableArea} 제곱미터</p>
                   </div>
                 </div>
                  <div className="flex items-center gap-3">
                   <Info className="w-8 h-8 text-primary"/>
                   <div>
-                    <span className="font-semibold">Address:</span>
+                    <span className="font-semibold">주소:</span>
                     <p className="text-muted-foreground">{farm.address}</p>
                   </div>
                 </div>
@@ -71,7 +71,7 @@ export default function FarmDetailPage({ params }: { params: { id: string } }) {
             <Card className="mt-8">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 font-headline">
-                  <Video className="text-primary"/> Live Stream
+                  <Video className="text-primary"/> 실시간 스트림
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -95,14 +95,14 @@ export default function FarmDetailPage({ params }: { params: { id: string } }) {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2 font-headline">
-                <Sprout className="text-primary"/> Available Crops
+                <Sprout className="text-primary"/> 재배 가능 작물
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               {farm.availableCrops.map(crop => (
                 <div key={crop} className="flex items-center justify-between p-4 bg-secondary rounded-lg">
                   <span className="font-medium">{crop}</span>
-                  <Button size="sm">Start Growing</Button>
+                  <Button size="sm">재배 시작하기</Button>
                 </div>
               ))}
             </CardContent>

@@ -20,23 +20,23 @@ export default function FarmsPage() {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold font-headline">Discover Your Farm</h1>
-        <p className="text-lg text-muted-foreground mt-2">Find the perfect plot to start growing.</p>
+        <h1 className="text-4xl font-bold font-headline">나의 농장 찾기</h1>
+        <p className="text-lg text-muted-foreground mt-2">재배를 시작할 완벽한 장소를 찾아보세요.</p>
       </div>
 
       <div className="bg-card p-6 rounded-lg shadow-md mb-8 flex flex-col md:flex-row gap-4">
         <Input 
-          placeholder="Search by farm name or location..."
+          placeholder="농장 이름 또는 위치로 검색..."
           className="md:flex-grow"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
         <Select value={selectedCrop} onValueChange={setSelectedCrop}>
           <SelectTrigger className="w-full md:w-[200px]">
-            <SelectValue placeholder="Filter by crop" />
+            <SelectValue placeholder="작물로 필터링" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="all">All Crops</SelectItem>
+            <SelectItem value="all">모든 작물</SelectItem>
             {allCrops.map(crop => (
               <SelectItem key={crop} value={crop}>{crop}</SelectItem>
             ))}
@@ -52,8 +52,8 @@ export default function FarmsPage() {
         </div>
       ) : (
         <div className="text-center py-16 bg-card rounded-lg">
-          <h2 className="text-2xl font-semibold">No Farms Found</h2>
-          <p className="text-muted-foreground mt-2">Try adjusting your search or filter criteria.</p>
+          <h2 className="text-2xl font-semibold">농장을 찾을 수 없습니다</h2>
+          <p className="text-muted-foreground mt-2">검색 또는 필터 기준을 조정해보세요.</p>
         </div>
       )}
     </div>

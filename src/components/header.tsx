@@ -8,9 +8,9 @@ import { useState } from 'react';
 import { cn } from '@/lib/utils';
 
 const navLinks = [
-  { href: '/farms', label: 'Farms' },
-  { href: '/dashboard', label: 'Dashboard' },
-  { href: '/farms/register', label: 'Register Farm' },
+  { href: '/farms', label: '농장' },
+  { href: '/dashboard', label: '대시보드' },
+  { href: '/farms/register', label: '농장 등록' },
 ];
 
 export default function Header() {
@@ -36,16 +36,16 @@ export default function Header() {
           </nav>
           <div className="hidden md:flex items-center gap-2">
             <Button variant="ghost" asChild>
-              <Link href="/sign-in">Sign In</Link>
+              <Link href="/sign-in">로그인</Link>
             </Button>
             <Button asChild>
-              <Link href="/sign-up">Sign Up</Link>
+              <Link href="/sign-up">회원가입</Link>
             </Button>
           </div>
           <div className="md:hidden">
             <Button variant="ghost" size="icon" onClick={() => setIsOpen(!isOpen)}>
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-              <span className="sr-only">Toggle menu</span>
+              <span className="sr-only">메뉴 토글</span>
             </Button>
           </div>
         </div>
@@ -65,10 +65,10 @@ export default function Header() {
             ))}
             <div className="flex w-full flex-col gap-2 pt-4 border-t">
               <Button variant="ghost" asChild className="w-full">
-                <Link href="/sign-in" onClick={() => setIsOpen(false)}>Sign In</Link>
+                <Link href="/sign-in" onClick={() => setIsOpen(false)}>로그인</Link>
               </Button>
               <Button asChild className="w-full">
-                <Link href="/sign-up" onClick={() => setIsOpen(false)}>Sign Up</Link>
+                <Link href="/sign-up" onClick={() => setIsOpen(false)}>회원가입</Link>
               </Button>
             </div>
           </nav>

@@ -26,7 +26,7 @@ export default function AiTipsGenerator({ cropName }: AiTipsGeneratorProps) {
       const result = await getAiGrowingTips({ cropName });
       setTips(result);
     } catch (err) {
-      setError('Failed to get AI tips. Please try again later.');
+      setError('AI 팁을 가져오는데 실패했습니다. 나중에 다시 시도해주세요.');
     } finally {
       setIsLoading(false);
     }
@@ -38,28 +38,28 @@ export default function AiTipsGenerator({ cropName }: AiTipsGeneratorProps) {
     <>
       <Button onClick={handleGetTips} disabled={isLoading} variant="outline">
         <Wand2 className="mr-2 h-4 w-4" />
-        Get AI Growing Tips
+        AI 재배 팁 받기
       </Button>
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
             <DialogTitle className="flex items-center gap-2 font-headline">
-              <Wand2 className="text-primary"/> AI Tips for Growing {cropName}
+              <Wand2 className="text-primary"/> {cropName} 재배를 위한 AI 팁
             </DialogTitle>
             <DialogDescription>
-              Here are some AI-powered tips to help you get the best harvest.
+              최고의 수확을 위한 AI 기반 팁입니다.
             </DialogDescription>
           </DialogHeader>
           <div className="py-4">
             {isLoading && (
               <div className="flex items-center justify-center h-40">
                 <Loader2 className="h-8 w-8 animate-spin text-primary" />
-                <p className="ml-4">Generating tips...</p>
+                <p className="ml-4">팁 생성 중...</p>
               </div>
             )}
             {error && (
               <Alert variant="destructive">
-                <AlertTitle>Error</AlertTitle>
+                <AlertTitle>오류</AlertTitle>
                 <AlertDescription>{error}</AlertDescription>
               </Alert>
             )}
@@ -72,7 +72,7 @@ export default function AiTipsGenerator({ cropName }: AiTipsGeneratorProps) {
             )}
           </div>
           <DialogFooter>
-            <Button onClick={() => setIsOpen(false)}>Close</Button>
+            <Button onClick={() => setIsOpen(false)}>닫기</Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>

@@ -7,6 +7,21 @@ import AiTipsGenerator from "./components/ai-tips-generator";
 import { CalendarDays, Sprout, Tag } from "lucide-react";
 
 export default function DashboardPage() {
+  const getStatusText = (status: string) => {
+    switch (status) {
+      case "planting":
+        return "파종";
+      case "growing":
+        return "성장 중";
+      case "ready_for_harvest":
+        return "수확 준비";
+      case "harvested":
+        return "수확 완료";
+      default:
+        return status;
+    }
+  };
+
   const getStatusBadgeVariant = (status: string) => {
     switch (status) {
       case "planting":
@@ -25,8 +40,8 @@ export default function DashboardPage() {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold font-headline">My Dashboard</h1>
-        <p className="text-lg text-muted-foreground mt-2">Track your crops and watch them grow.</p>
+        <h1 className="text-4xl font-bold font-headline">내 대시보드</h1>
+        <p className="text-lg text-muted-foreground mt-2">작물을 추적하고 자라는 모습을 지켜보세요.</p>
       </div>
 
       <div className="space-y-8">
@@ -39,12 +54,12 @@ export default function DashboardPage() {
                     <Sprout className="text-primary"/> {crop.cropName}
                   </CardTitle>
                   <CardDescription className="mt-1">
-                    at <span className="font-semibold text-primary">{crop.farmName}</span>
+                    <span className="font-semibold text-primary">{crop.farmName}</span>에서
                   </CardDescription>
                 </div>
                 <div className="mt-4 md:mt-0 flex flex-col items-start md:items-end gap-2">
-                   <Badge variant={getStatusBadgeVariant(crop.status)} className="capitalize py-1 px-3 text-sm">
-                    {crop.status.replace('_', ' ')}
+                   <Badge variant={getStatusBadgeVariant(crop.status)} className="py-1 px-3 text-sm">
+                    {getStatusText(crop.status)}
                   </Badge>
                   <Badge variant="secondary" className="font-mono">
                     <Tag className="w-4 h-4 mr-2"/>
@@ -57,18 +72,18 @@ export default function DashboardPage() {
               <Separator className="mb-6" />
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div>
-                  <h3 className="font-semibold mb-4 text-lg">Crop Details</h3>
+                  <h3 className="font-semibold mb-4 text-lg">작물 정보</h3>
                   <div className="space-y-3 text-sm">
                     <div className="flex items-center gap-3">
                       <CalendarDays className="w-5 h-5 text-muted-foreground"/>
                       <div>
-                        <strong>Start Date:</strong> {crop.startDate.toLocaleDateString()}
+                        <strong>시작일:</strong> {crop.startDate.toLocaleDateString('ko-KR')}
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
                       <CalendarDays className="w-5 h-5 text-muted-foreground"/>
                       <div>
-                        <strong>Est. Harvest:</strong> {crop.estimatedHarvestDate.toLocaleDateString()}
+                        <strong>예상 수확일:</strong> {crop.estimatedHarvestDate.toLocaleDateString('ko-KR')}
                       </div>
                     </div>
                   </div>
@@ -77,7 +92,7 @@ export default function DashboardPage() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-4 text-lg">Growth Log</h3>
+                  <h3 className="font-semibold mb-4 text-lg">성장 기록</h3>
                   <GrowthLog log={crop.growthLog} />
                 </div>
               </div>
