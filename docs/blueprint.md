@@ -1,4 +1,4 @@
-# **App Name**: SmartShare Farms
+# **App Name**: 心, 밭다
 
 ## Core Features:
 
